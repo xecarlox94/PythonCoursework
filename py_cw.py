@@ -1,7 +1,7 @@
 # Arash's coursework template
 
 # My Name here, My UserID, My Regno (why not)  <--- so we know who you are
-# F28PL Coursework PY1                         <--- sanity check
+# F28PL Coursework 2, Python                         <--- sanity check
 
 
 # You may assume variables, procedures, and functions defined in earlier questions
