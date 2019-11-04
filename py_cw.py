@@ -90,8 +90,8 @@ def seqaddi(l1, l2):
 
 def seqmulti(l1, l2):
     mulList = []
-    for i in range(len(l1))
-        val = l1[1] + l2[i]
+    for i in range(len(l1)):
+        val = l1[i] + l2[i]
         mulList.append(val)
     return mulList
 
