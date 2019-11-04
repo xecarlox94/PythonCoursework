@@ -66,7 +66,7 @@ def fromcomplex(c):
 2a. Using def, write iterative functions seqaddi and seqmulti that implement pointwise
 addition and multiplication of integer sequences.
 For instance
- seqaddi([1,2,3],[~1,2,2])
+ seqaddi([1,2,3],[-1,2,2])
 should compute
  [0,4,5]
 You need not write error-handling code to handle the cases that sequences have different
@@ -81,11 +81,20 @@ Call them seqaddr and seqmultr.
 
 
 def seqaddi(l1, l2):
-    pass
+    addList = []
+    for i in range(len(l1)):
+        val = l1[i] + l2[i]
+        addList.append(val)
+    return addList
 
 
 def seqmulti(l1, l2):
-    pass
+    mulList = []
+    for i in range(len(l1))
+        val = l1[1] + l2[i]
+        mulList.append(val)
+    return mulList
+
 
 
 #####################################
