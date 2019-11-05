@@ -1,6 +1,6 @@
 # Arash's coursework template
 
-# My Name here, My UserID, My Regno (why not)  <--- so we know who you are
+# My Name here, My UserID                            <--- so we know who you are
 # F28PL Coursework 2, Python                         <--- sanity check
 
 
