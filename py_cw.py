@@ -102,12 +102,23 @@ def seqmulti(l1, l2):
 
 
 def seqaddr(l1, l2):
-    pass
+    if len(l1) > 0:
+        temp =  [ l1.pop() + l2.pop() ]
+        return seqaddr(l1, l2) + temp
+    else:
+        return []
 
 
 def seqmultr(l1, l2):
-    pass
+    if len(l1) > 0:
+        temp = [ l1.pop() * l2.pop() ]
+        return seqmultr(l1, l2) + temp
+    else:
+        return []
 
+x = seqaddr([1,2,2], [3,3,3])
+
+print(x)
 
 #####################################
 # Question 2c
