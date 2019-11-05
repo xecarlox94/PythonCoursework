@@ -116,9 +116,6 @@ def seqmultr(l1, l2):
     else:
         return []
 
-x = seqaddr([1,2,2], [3,3,3])
-
-print(x)
 
 #####################################
 # Question 2c
