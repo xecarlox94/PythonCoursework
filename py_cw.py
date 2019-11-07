@@ -43,26 +43,29 @@ def cadd(c1, c2):
     imag = img1 + img2
     return (real, imag)
 
-c1 = (2,3)
-c2 = (2,2)
-
-print(cadd(c1,c2))
-
 
 def cmult(c1,c2):
-    pass
+    (real1, img1) = c1
+    (real2, img2) = c2
+    real = real1 * real2
+    img = img1 * img2
+    return (real, img)
 
 
 #####################################
 # Question 1b
 
 def tocomplex(x1, y1):
-    pass
+    img = y1 * 1j
+    return (x1 + img)
 
 
 def fromcomplex(c):
-    pass
+    real = int(c.real)
+    img = int(c.imag)
+    return (real, img)
 
+print(fromcomplex(3+5j))
 
 # END ANSWER TO Question 1
 ################################################################################
