@@ -134,13 +134,12 @@ def seqmultr(l1, l2):
 def seqaddlc(l1,l2):
     return list(( x + y for x in l1 for y in l2 if l1.index(x) == l2.index(y)))
 
-print(seqaddlc([1,2,3],[1,2,3]))
 
 def seqmultlc(l1,l2):
-    pass
+    return list(( x * y for x in l1 for y in l2 if l1.index(x) == l2.index(y) ))
 
 
-
+print(seqmultlc([2,3,5], [3,4,5]))
 
 # END ANSWER TO Question 2
 ################################################################################
