@@ -35,8 +35,18 @@ versa. You may use the python methods real and imag without comment, but not com
 # Question 1a
 
 
+
 def cadd(c1, c2):
-    pass
+    (real1, img1) = c1
+    (real2, img2) = c2
+    real = real1 + real2
+    imag = img1 + img2
+    return (real, imag)
+
+c1 = (2,3)
+c2 = (2,2)
+
+print(cadd(c1,c2))
 
 
 def cmult(c1,c2):
