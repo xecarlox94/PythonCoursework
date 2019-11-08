@@ -295,8 +295,12 @@ to next your generator behaves as if it were the infinite datastructure illustra
 
 
 def cycleoflife():
-    pass
-
+    cycle = ["code", "eat", "sleep"]
+    counter = 1
+    while True:
+        index = counter % len(cycle)
+        yield cycle[index]
+        counter += 1
 
 
 # END ANSWER TO Question 7
