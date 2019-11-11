@@ -361,7 +361,6 @@ Do not use str.  You may find it useful to consider isinstance or the following 
 
 
 def gendat(datum):
-    pass
     if type(datum) == int:
         return [datum]
     elif datum == []:
