@@ -1,6 +1,6 @@
 # Arash's coursework template
 
-# My Name here, My UserID                            <--- so we know who you are
+# Jose Fernandes, H00324200
 # F28PL Coursework 2, Python                         <--- sanity check
 
 
@@ -300,7 +300,6 @@ So
 
 def encdat(dat):
     dataType = type(dat)
-
     if dataType == int or dataType == float:
         return str(dat)
     elif dataType == complex:
@@ -325,7 +324,11 @@ integers and this representation. Call them fenc and fdec.
 
 
 def fenc(i):
-    pass
+    if i == 0:
+        return i
+    else:
+
+
 
 
 
