@@ -210,6 +210,17 @@ observations.
 
 
 
+"""
+
+Mutable vs Immutable types
+
+In Python, the mutable type objects are items with static values, which never change. In this programming language, all items and values are inherited from the "object" so there are no "pure values". For that reason, some built-in types have their inner value an immutable form, to not break the formal logic and object-oriented programming principles. The basic programming types, "bool", "int" and "float", are completely static because it avoids horrible errors that break the laws of mathematics and logic since it has to no good purpose to do so.
+The "tuple", "string" and "frozenset" types are defined by the user but their values can not change after being created since these types do not have functions to mutate their inner value. However, these types might have functions that return other objects resultant from the original object, without changing any of its properties. This ensures the programmer that the values will remain intact throughout the python script interpretation.
+The mutable types are objects that can have their inner value changed. this property is very useful for the procedural programming paradigm as the values in the memory location must the updated according to the intended procedure, instead of just continuously taking more memory to store new values resultant from existing ones. The mutable types include "list", "tuple", "set" and "dictionaries". Additionally, the "frozenset" is inherited from the "set" and it is used, for example, in "dictionaries" as "key" since this data structure associates an immutable "key" to a "value".
+
+
+"""
+
 
 # END ANSWER TO Question 4
 ################################################################################
