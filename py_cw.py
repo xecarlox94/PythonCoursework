@@ -207,17 +207,29 @@ def mul_sumLists(seq1, seq2):
 
 def transposingMatrix(m):
     transposedMatrix = []
-    for i in range(0, len(m)):
+    for i in range(0, len(m[0])):
         tempRow = []
-        for j in range(0, len(m[i])):
-            tempRow[i] = m[i][j]
-        transposedMatrix[i] = tempRow
+        for j in range(0, len(m)):
+            tempRow.append(m[j][i])
+        transposedMatrix.append(tempRow)
     return transposedMatrix
 
-print(transposingMatrix([[7, 9, 11],[8, 10, 12]]))
+def multSeqbyMatrix(seq, matrix):
+    tempList = []
+    matrix = transposingMatrix(matrix)
+    for row in matrix:
+        tempList.append(mul_sumLists(row, seq))
+    return tempList
 
 def matrixmult(m1,m2):
-    pass
+    finalMatrix = []
+    for row in m1:
+        tempSeq = multSeqbyMatrix(row, m2)
+        finalMatrix.append(tempSeq)
+    return finalMatrix
+
+print(matrixmult([[1,2,3],[4,5,6]], [[7,8], [9,10], [11,12]]))
+
 
 # END ANSWER TO Question 3
 ################################################################################
