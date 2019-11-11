@@ -228,7 +228,6 @@ def matrixmult(m1,m2):
         finalMatrix.append(tempSeq)
     return finalMatrix
 
-print(matrixmult([[1,2,3],[4,5,6]], [[7,8], [9,10], [11,12]]))
 
 
 # END ANSWER TO Question 3
@@ -300,7 +299,13 @@ So
 
 
 def encdat(dat):
-    pass
+    dataType = type(dat)
+
+    if dataType == int or dataType == float:
+        return str(dat)
+    elif dataType == complex:
+        return str( int( dat.real ) ) + str("+") + str( int( dat.imag ) ) + str("j")
+
 
 # END ANSWER TO Question 5
 ################################################################################
@@ -321,6 +326,7 @@ integers and this representation. Call them fenc and fdec.
 
 def fenc(i):
     pass
+
 
 
 def fdec(l):
