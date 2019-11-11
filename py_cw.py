@@ -191,8 +191,13 @@ def matrixshape(m):
 
 
 def matrixadd(m1,m2):
-    pass
+    newMatrix = []
+    for i in range(0, len(m1)):
+        seq = seqaddlc(m1[i], m2[i])
+        newMatrix.append(seq)
+    return newMatrix
 
+print(matrixadd([[3,8],[4,6]],[[4,0],[1, -9]]))
 
 def matrixmult(m1,m2):
     pass
