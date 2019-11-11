@@ -65,7 +65,6 @@ def fromcomplex(c):
     img = int(c.imag)
     return (real, img)
 
-print(fromcomplex(3+5j))
 
 # END ANSWER TO Question 1
 ################################################################################
@@ -171,7 +170,21 @@ should not appeal to any libraries, e.g. for matrix processing.  Don't use zip.
 
 
 def ismatrix(m):
-    pass
+    if (m == [[]]) or (m == []): return True
+
+    lengthRow = len(m[0])
+    length = len(m)
+
+    for i in range(1, length - 1):
+        print(i)
+        print("length: %", lengthRow)
+        print("length [i-1] : %", len(m[i - 1]))
+        if lengthRow != len(m[i + 1]):
+            return False
+        lengthRow = len(m[i])
+
+    return True
+
 
 
 def matrixshape(m):
