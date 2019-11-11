@@ -197,7 +197,6 @@ def matrixadd(m1,m2):
         newMatrix.append(seq)
     return newMatrix
 
-print(matrixadd([[3,8],[4,6]],[[4,0],[1, -9]]))
 
 def matrixmult(m1,m2):
     pass
@@ -363,7 +362,23 @@ Do not use str.  You may find it useful to consider isinstance or the following 
 
 def gendat(datum):
     pass
+    # if type(datum) == int:
+    #     return [datum]
+    # elif datum == []:
+    #     return []
+    # else:
+    #     while type(datum[0]) == list:
+    #         temp = datum[0].pop()
+    #         if len(datum[0]) == 0:
+    #             datum = datum[1:]
+    #         datum.append(temp)
+    #     return gendat(datum)
 
+
+
+# print(gendat(5))
+# print(gendat([]))
+# print(gendat([5,[5,[]],[],[5]]))
 
 # END ANSWER TO Question 8
 ################################################################################
