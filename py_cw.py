@@ -176,9 +176,6 @@ def ismatrix(m):
     length = len(m)
 
     for i in range(1, length - 1):
-        print(i)
-        print("length: %", lengthRow)
-        print("length [i-1] : %", len(m[i - 1]))
         if lengthRow != len(m[i + 1]):
             return False
         lengthRow = len(m[i])
