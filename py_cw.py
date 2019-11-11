@@ -324,9 +324,7 @@ integers and this representation. Call them fenc and fdec.
 
 
 def fenc(i):
-    if i == 0:
-        return i
-    else:
+    pass
 
 
 
