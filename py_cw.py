@@ -47,10 +47,9 @@ def cadd(c1, c2):
 def cmult(c1,c2):
     (real1, img1) = c1
     (real2, img2) = c2
-    real = real1 * real2
-    img = img1 * img2
+    real = (real1 * real2) - (img1 * img2)
+    img = (real1 * img2) + (real2 + img1)
     return (real, img)
-
 
 #####################################
 # Question 1b
@@ -185,8 +184,9 @@ def ismatrix(m):
 
 
 def matrixshape(m):
-    pass
-
+    lengthRow = len(m[0])
+    lengthCollumn = len(m)
+    return (len(m), )
 
 def matrixadd(m1,m2):
     pass
