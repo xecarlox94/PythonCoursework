@@ -186,7 +186,9 @@ def ismatrix(m):
 def matrixshape(m):
     lengthRow = len(m[0])
     lengthCollumn = len(m)
-    return (len(m), )
+    return (lengthRow, lengthCollumn)
+
+
 
 def matrixadd(m1,m2):
     pass
