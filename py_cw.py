@@ -219,6 +219,13 @@ The "tuple", "string" and "frozenset" types are defined by the user but their va
 The mutable types are objects that can have their inner value changed. this property is very useful for the procedural programming paradigm as the values in the memory location must the updated according to the intended procedure, instead of just continuously taking more memory to store new values resultant from existing ones. The mutable types include "list", "tuple", "set" and "dictionaries". Additionally, the "frozenset" is inherited from the "set" and it is used, for example, in "dictionaries" as "key" since this data structure associates an immutable "key" to a "value".
 
 
+Integer vs float types
+
+Integers, in the python programming language, represent numbers the whole number values. The representation of a number is accomplished by allocating the same amount of memory for every integer because for a computer's memory there is no distinction between "0" and the integer maximum value. The integer's memory architecture uses all the bits to store the whole number value, apart from the first bit which determines if the value is positive or negative. As a result of the integer's representation having a low precision of 1 since it is dealing with the whole numbers, the computer finite memory can store these values with relative ease. Additionally, python will display numbers in the form of a "string of numbers" if the number is bigger than the memory available, event thought the computer's limited memory is not capable of processing those huge values.
+However, the memory representation of a float value is completely different since it deals with fractional numbers with variable precision. For this reason, the memory architecture for this type of numbers takes more space than an integer value with constant precision. As a result, to switch between integers and floats it is necessary to use built-in constructors to cast the new number values into the computer memory.
+
+
+
 """
 
 
