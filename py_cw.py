@@ -198,6 +198,24 @@ def matrixadd(m1,m2):
     return newMatrix
 
 
+def mul_sumLists(seq1, seq2):
+    list = seqmultlc(seq1, seq2)
+    total = 0
+    for el in list:
+        total = total + el
+    return total
+
+def transposingMatrix(m):
+    transposedMatrix = []
+    for i in range(0, len(m)):
+        tempRow = []
+        for j in range(0, len(m[i])):
+            tempRow[i] = m[i][j]
+        transposedMatrix[i] = tempRow
+    return transposedMatrix
+
+print(transposingMatrix([[7, 9, 11],[8, 10, 12]]))
+
 def matrixmult(m1,m2):
     pass
 
