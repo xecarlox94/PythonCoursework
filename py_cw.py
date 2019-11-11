@@ -362,23 +362,19 @@ Do not use str.  You may find it useful to consider isinstance or the following 
 
 def gendat(datum):
     pass
-    # if type(datum) == int:
-    #     return [datum]
-    # elif datum == []:
-    #     return []
-    # else:
-    #     while type(datum[0]) == list:
-    #         temp = datum[0].pop()
-    #         if len(datum[0]) == 0:
-    #             datum = datum[1:]
-    #         datum.append(temp)
-    #     return gendat(datum)
+    if type(datum) == int:
+        return [datum]
+    elif datum == []:
+        return []
+    else:
+        while type(datum[0]) == list:
+            if datum[0] == []:
+                return gendat(datum[1:])
+            temp = datum[0].pop()
+            if temp != []:
+                datum.append(temp)
+        return datum[0:1] + gendat(datum[1:])
 
-
-
-# print(gendat(5))
-# print(gendat([]))
-# print(gendat([5,[5,[]],[],[5]]))
 
 # END ANSWER TO Question 8
 ################################################################################
