@@ -367,10 +367,15 @@ integers and this representation. Call them fenc and fdec.
 
 
 def fenc(i):
-    pass
+    if i == 0:
+        return []
+    else:
+        return [ fenc( i - 1 ) , [ fenc( i - 1) ] ]
 
 
 
+print(fenc(0))
+print(fenc(1))
 
 
 def fdec(l):
