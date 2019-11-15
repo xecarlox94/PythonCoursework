@@ -374,9 +374,6 @@ def fenc(i):
 
 
 
-print(fenc(0))
-print(fenc(1))
-
 
 def fdec(l):
     pass
