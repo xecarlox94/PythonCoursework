@@ -259,9 +259,10 @@ observations.
 
 Mutable vs Immutable types
 
-In Python, the mutable type objects are items with static values, which never change. In this programming language, all items and values are inherited from the "object" so there are no "pure values". For that reason, some built-in types have their inner value an immutable form, to not break the formal logic and object-oriented programming principles. The basic programming types, "bool", "int" and "float", are completely static because it avoids horrible errors that break the laws of mathematics and logic since it has to no good purpose to do so.
+In Python, the mutable type objects are items with static values, which never change. In this programming language, all items and values are inherited from the "object" so there are no "pure values". For that reason, some built-in types have their inner value an immutable form, to not break the formal logic and object-oriented programming principles. The basic programming types, "bool", "int" and "float", are completely static because it avoids horrible errors that break the laws of mathematics and logic since it has to no good purpose to do so. 
 The "tuple", "string" and "frozenset" types are defined by the user but their values can not change after being created since these types do not have functions to mutate their inner value. However, these types might have functions that return other objects resultant from the original object, without changing any of its properties. This ensures the programmer that the values will remain intact throughout the python script interpretation.
 The mutable types are objects that can have their inner value changed. this property is very useful for the procedural programming paradigm as the values in the memory location must the updated according to the intended procedure, instead of just continuously taking more memory to store new values resultant from existing ones. The mutable types include "list", "tuple", "set" and "dictionaries". Additionally, the "frozenset" is inherited from the "set" and it is used, for example, in "dictionaries" as "key" since this data structure associates an immutable "key" to a "value".
+
 
 
 Integer vs float types
@@ -269,7 +270,30 @@ Integer vs float types
 Integers, in the python programming language, represent numbers the whole number values. The representation of a number is accomplished by allocating the same amount of memory for every integer because for a computer's memory there is no distinction between "0" and the integer maximum value. The integer's memory architecture uses all the bits to store the whole number value, apart from the first bit which determines if the value is positive or negative. As a result of the integer's representation having a low precision of 1 since it is dealing with the whole numbers, the computer finite memory can store these values with relative ease. Additionally, python will display numbers in the form of a "string of numbers" if the number is bigger than the memory available, event thought the computer's limited memory is not capable of processing those huge values.
 However, the memory representation of a float value is completely different since it deals with fractional numbers with variable precision. For this reason, the memory architecture for this type of numbers takes more space than an integer value with constant precision. As a result, to switch between integers and floats it is necessary to use built-in constructors to cast the new number values into the computer memory.
 
+
+
 Assignment = vs equality == vs identity
+
+The assignment is the operation of allocating a value to a variable. In python, this operation is done with the single equality symbol "=". When assigning an object to another object, the assignment will allocate a "copy" the value of the object, instead of just referencing the same original object.
+In python language, the objects are compared to determine if they have the same properties, using the equality operator "==". This operator has a boolean return type, which compares every single attribute and function of an object to determine if they are "equal". This does not mean that both variables point to the same object in memory but it means instead that these two objects share identical properties, attributes and functions.
+In contrast to many conventional programming languages, python has an operator that checks if objects are references to the same value. That operator is the keyword "is". This operator simply compares the result of the function "id" that returns the numerical number which identifies every object in memory. In all, if both variables have the same "id" number means that they are the reference to the same object in memory. Testing if two variables point to the object is especially important to let the programmer careful when modifying them since it is unsafe to use variables that have second effects of the program.
+
+
+
+The computational effects of a call to list on an element of range type, as in list(range(5**5**5))
+
+The range function is a python native function that stores an object that generates a stream of integers. This function does not hold any values on memory but it holds a mathematical computation that streams a sequence of integer numbers.  This function is overloaded but generally, by default, the integer sequence has the minimum value of 0 and it is incremented by 1. The maximum integer is the value which has to be specified, at the least.
+In contrast, the list constructor stores a sequence of polymorphic elements. It is usually used to store sequences of integers in the memory, without storing or referencing the mathematical computation which produced them.
+In this example, the function range "5**5**5" will generate an integer stream from 0 to 298,023,223,876,953,125, incrementing successively by one, which means that it will generate a stream with 298,023,223,876,953,125 integers. This value is far too big for a regular computer processing power to perform. The result of this range function, the integer stream, is then stored into the memory using the list constructor which implies that a sequence of 298,023,223,876,953,125 integers will be stored in memory, what is also far too big for the regular computer's memory.
+
+
+
+Slices, with examples. Including an explanation of the difference in execution between list(range(10**10)[10:10]) and list(range(10**10))[10:10]
+
+In python, the slices have different results in lists and ranges. In lists, the slice operator returns a copy of the segment specified inside the squared brackets, that determine the initial and the last indexes for the integer sequence copy. 
+In ranges, the slice operator determines where the stream should start from and when it should end. All the computation related to the rest of the stream will not be run, similarly to a "break" statement in a normal programming loop.
+The first example shows a range function which will only run from the element integer 10 but it will also end at the same exact value. The range function will return an empty or null value which the list constructor will interpret as an empty list. This example only executes one operation in the range function and one operation in the list constructor, which is pretty cheap in processing power.
+The second example is computing an integer stream from 0 to 10,000,000,000‬, one by one. This operation alone takes 10,000,000,000 operations what can be considered as a very costly operation. Furthermore, this sequence composed of 10,000,000,000‬ integer elements will then be stored in the computer memory what is very costly in terms of memory space. In this example, the slice operation is only called after the processing and the storage of this huge integer sequence to output an empty list, since the initial and the final indexes are the same. 
 
 
 """
