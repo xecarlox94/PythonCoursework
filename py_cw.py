@@ -376,7 +376,14 @@ def fenc(i):
 
 
 def fdec(l):
-    pass
+    if l == []:
+        return 0
+    else:
+        el = l.pop()
+        if el == []:
+            return 0 + fdec(l)
+        else:
+            return 1 + fdec(l)
 
 
 # END ANSWER TO Question 6
@@ -476,6 +483,9 @@ return the primes, starting from 2.
 
 def eratosthenes():
     pass
+
+
+
 
 
 
