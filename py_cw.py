@@ -483,25 +483,31 @@ return the primes, starting from 2.
 
 def eratosthenes():
     primes = [2]
-    A = [True]
+    A = [True] * 5
 
-    tempArray = [True] * ((primes[0] **2) - len(A))
+    loop = 0
 
-    print(tempArray)
-    A += tempArray
+    while True:
+        lastIndexPrimes = len(primes) - 1
+        yield primes[lastIndexPrimes]
 
-    print(A)
+        for y in range(primes[lastIndexPrimes] + 1, len(A)):
+            if A[y] == True:
+                primes.append(y)
+                lastIndexPrimes = len(primes) - 1
+                newArrayLength = (primes[lastIndexPrimes] ** 2) + 1
+                tempArray = [True] * ( newArrayLength - len(A))
+                A += tempArray
+                break
 
-    primes[0]
-
-
-
-print(eratosthenes())
+        for prime in primes:
+            for i in range(primes[0], len(A) + 2, prime):
+                A[i - 2] = False
 
 
 
 # This is not an endless generator (like you're asked to programme) this will only get primes upto the passed input or 40000
-def Eeratosthenes(z=40000):
+def eratosthenesEXAMPLE(z=40000):
     # create an array of true values the size of z
     A = [True] * z
     # iterate over each value to z squared
