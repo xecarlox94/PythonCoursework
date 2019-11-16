@@ -485,8 +485,6 @@ def eratosthenes():
     primes = [2]
     A = [True] * 5
 
-    loop = 0
-
     while True:
         lastIndexPrimes = len(primes) - 1
         yield primes[lastIndexPrimes]
