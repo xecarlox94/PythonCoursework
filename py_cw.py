@@ -379,11 +379,11 @@ def fdec(l):
     if l == []:
         return 0
     else:
-        el = l.pop()
-        if el == []:
-            return 0 + fdec(l)
-        else:
-            return 1 + fdec(l)
+        counter = 1
+        while l != ([[], [[]]]):
+            counter += 1
+            l = l[1].pop()
+        return counter
 
 
 # END ANSWER TO Question 6
