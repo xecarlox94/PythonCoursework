@@ -332,7 +332,7 @@ def matrixshape(m):
     # get collumn length
     lengthCollumn = len(m)
 
-    # return tuple with row and collomn length
+    # return tuple with row and collumn length
     return (lengthRow, lengthCollumn)
 
 
@@ -384,14 +384,31 @@ def mul_sumLists(seq1, seq2):
 
 
 
-
+# it transposes a matrix
 def transposingMatrix(m):
+
+    # it initialises a empty array
     transposedMatrix = []
+
+    # loops from 0 to the matrix first row length
     for i in range(0, len(m[0])):
+
+        # it initialises a temporary empty row
         tempRow = []
+
+        # loops from 0 to matrix collumn length
         for j in range(0, len(m)):
-            tempRow.append(m[j][i])
+
+            # it gets the new row element from the original matrix
+            rowElem = m[j][i]
+
+            # appends the new row element into the temporary row
+            tempRow.append(rowElem)
+
+        # it appends the temporary row into the new matrix
         transposedMatrix.append(tempRow)
+
+    # it returns the final transposed matrix
     return transposedMatrix
 
 
@@ -418,6 +435,7 @@ def matrixmult(m1,m2):
         finalMatrix.append(tempSeq)
     return finalMatrix
 
+print(matrixmult([[1,2,3],[4,5,6]],[[7,8],[9,10],[11,12]]))
 
 
 
@@ -505,7 +523,6 @@ The range function is a python native function that stores an object that genera
 In contrast, the list constructor stores a sequence of polymorphic elements. It is usually used to store sequences of integers in the memory, without storing or referencing the mathematical computation which produced them.
 In this example, the function range "5**5**5" will generate an integer stream from 0 to 298,023,223,876,953,125, incrementing successively by one, which means that it will generate a stream with 298,023,223,876,953,125 integers. This value is far too big for a regular computer processing power to perform. The result of this range function, the integer stream, is then stored into the memory using the list constructor which implies that a sequence of 298,023,223,876,953,125 integers will be stored in memory, what is also far too big for the regular computer's memory.
 
-"""
 
 
 
@@ -513,7 +530,8 @@ In this example, the function range "5**5**5" will generate an integer stream fr
 
 
 
-"""
+
+
 
 
 Slices, with examples. Including an explanation of the difference in execution between list(range(10**10)[10:10]) and list(range(10**10))[10:10]
