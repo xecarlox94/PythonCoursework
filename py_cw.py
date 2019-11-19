@@ -503,8 +503,31 @@ The mutable types are objects that can have their inner value changed. this prop
 EXAMPLE:
 """
 
+# new set
+set = { 3,53,43,43,54343}
 
 
+# integer to be manipulated
+integer = 111111
+
+# add integer variable
+set.add(integer)
+
+print("after adding integer")
+print(set)
+
+set.remove(integer)
+
+print("after removing integer")
+print(set)
+
+fSet = frozenset(set)
+
+try:
+    fSet.remove(integer)
+except Exception as error:
+    print(error)
+    print("fronzenset has no attribute remove because it is a immutable type")
 
 
 
