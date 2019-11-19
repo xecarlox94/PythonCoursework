@@ -485,11 +485,13 @@ list(range(5**5**5)).
  list(range(10**10))[10:10]
 Include short code-fragments where appropriate (as I do when lecturing) to illustrate your
 observations.
-"""
 
 
 
-"""
+
+
+ESSAY =========================================================
+
 
 Mutable vs Immutable types
 
@@ -497,6 +499,8 @@ In Python, the mutable type objects are items with static values, which never ch
 The "tuple", "string" and "frozenset" types are defined by the user but their values can not change after being created since these types do not have functions to mutate their inner value. However, these types might have functions that return other objects resultant from the original object, without changing any of its properties. This ensures the programmer that the values will remain intact throughout the python script interpretation.
 The mutable types are objects that can have their inner value changed. this property is very useful for the procedural programming paradigm as the values in the memory location must the updated according to the intended procedure, instead of just continuously taking more memory to store new values resultant from existing ones. The mutable types include "list", "tuple", "set" and "dictionaries". Additionally, the "frozenset" is inherited from the "set" and it is used, for example, in "dictionaries" as "key" since this data structure associates an immutable "key" to a "value".
 
+
+EXAMPLE:
 """
 
 
@@ -506,12 +510,19 @@ The mutable types are objects that can have their inner value changed. this prop
 
 
 """
+
+
+
+
+
 
 Integer vs float types
 
 Integers, in the python programming language, represent numbers the whole number values. The representation of a number is accomplished by allocating the same amount of memory for every integer because for a computer's memory there is no distinction between "0" and the integer maximum value. The integer's memory architecture uses all the bits to store the whole number value, apart from the first bit which determines if the value is positive or negative. As a result of the integer's representation having a low precision of 1 since it is dealing with the whole numbers, the computer finite memory can store these values with relative ease. Additionally, python will display numbers in the form of a "string of numbers" if the number is bigger than the memory available, event thought the computer's limited memory is not capable of processing those huge values.
 However, the memory representation of a float value is completely different since it deals with fractional numbers with variable precision. For this reason, the memory architecture for this type of numbers takes more space than an integer value with constant precision. As a result, to switch between integers and floats it is necessary to use built-in constructors to cast the new number values into the computer memory.
 
+
+EXAMPLE:
 """
 
 
@@ -521,6 +532,10 @@ However, the memory representation of a float value is completely different sinc
 
 
 """
+
+
+
+
 
 
 Assignment = vs equality == vs identity
@@ -529,6 +544,8 @@ The assignment is the operation of allocating a value to a variable. In python, 
 In python language, the objects are compared to determine if they have the same properties, using the equality operator "==". This operator has a boolean return type, which compares every single attribute and function of an object to determine if they are "equal". This does not mean that both variables point to the same object in memory but it means instead that these two objects share identical properties, attributes and functions.
 In contrast to many conventional programming languages, python has an operator that checks if objects are references to the same value. That operator is the keyword "is". This operator simply compares the result of the function "id" that returns the numerical number which identifies every object in memory. In all, if both variables have the same "id" number means that they are the reference to the same object in memory. Testing if two variables point to the object is especially important to let the programmer careful when modifying them since it is unsafe to use variables that have second effects of the program.
 
+
+EXAMPLE:
 """
 
 
@@ -538,6 +555,10 @@ In contrast to many conventional programming languages, python has an operator t
 
 
 """
+
+
+
+
 
 
 The computational effects of a call to list on an element of range type, as in list(range(5**5**5))
