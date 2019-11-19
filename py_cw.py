@@ -503,6 +503,10 @@ The mutable types are objects that can have their inner value changed. this prop
 EXAMPLE:
 """
 
+
+print("\n\n")
+
+print("Mutable vs Immutable types example: \n")
 # new set
 set = { 3,53,43,43,54343}
 
@@ -516,6 +520,7 @@ set.add(integer)
 print("after adding integer")
 print(set)
 
+# removing integer
 set.remove(integer)
 
 print("after removing integer")
@@ -524,13 +529,17 @@ print(set)
 fSet = frozenset(set)
 
 try:
+
+    # committing an error
     fSet.remove(integer)
+
 except Exception as error:
     print(error)
     print("fronzenset has no attribute remove because it is a immutable type")
 
 
 
+print("\n\n")
 
 """
 
@@ -548,11 +557,29 @@ However, the memory representation of a float value is completely different sinc
 EXAMPLE:
 """
 
+print("\n\n")
+
+print("Integer vs Float example: \n")
+
+
+print("declaring an float value within the integer range (1E+22)")
+float1 = 1E+22
+
+
+print("printing the integer value of 1E+22 float")
+print(int(float1))
+
+
+print("updating the float value (1E+23)")
+float1 = 1E+23
+
+
+print("printing the integer value of 1E+22 float")
+print(int(float1))
 
 
 
-
-
+print("\n\n")
 
 """
 
