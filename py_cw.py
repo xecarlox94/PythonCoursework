@@ -415,11 +415,22 @@ def transposingMatrix(m):
 
 
 
-
+# it multiplies an array by a matrix
 def multSeqbyMatrix(seq, matrix):
+
+    # it initialises a temporary empty array
     tempList = []
+
+    # for each row in matrix
     for row in matrix:
-        tempList.append(mul_sumLists(row, seq))
+
+        # it multiplies the matrix row per the array argument function
+        intElem = mul_sumLists(row, seq)
+
+        # it appends the integer number
+        tempList.append(intElem)
+
+    # it returns the new row of elements
     return tempList
 
 
@@ -428,11 +439,24 @@ def multSeqbyMatrix(seq, matrix):
 
 
 def matrixmult(m1,m2):
+
+    # initialises a new matrix
     finalMatrix = []
+
+    # transposes the second matrix
     m2 = transposingMatrix(m2)
+
+    # per each row in the first matrix
     for row in m1:
-        tempSeq = multSeqbyMatrix(row, m2)
-        finalMatrix.append(tempSeq)
+
+        # return an array
+        # resultant by the multiplication of a row by a matrix
+        tempRow = multSeqbyMatrix(row, m2)
+
+        # append new temporary row to new matrix
+        finalMatrix.append(tempRow)
+
+    # return final matrix
     return finalMatrix
 
 print(matrixmult([[1,2,3],[4,5,6]],[[7,8],[9,10],[11,12]]))
