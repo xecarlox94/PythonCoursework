@@ -345,18 +345,21 @@ def transposingMatrix(m):
 
 def multSeqbyMatrix(seq, matrix):
     tempList = []
-    matrix = transposingMatrix(matrix)
     for row in matrix:
         tempList.append(mul_sumLists(row, seq))
     return tempList
 
 def matrixmult(m1,m2):
     finalMatrix = []
+    m2 = transposingMatrix(m2)
     for row in m1:
         tempSeq = multSeqbyMatrix(row, m2)
         finalMatrix.append(tempSeq)
     return finalMatrix
 
+
+
+print(matrixmult([[1,2,3],[4,5,6]],[[7,8],[9,10],[11,12]]))
 
 
 # END ANSWER TO Question 3
