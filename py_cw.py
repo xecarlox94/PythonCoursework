@@ -129,7 +129,7 @@ def seqaddi(l1, l2):
     #loops from 0 to length of l1
     for i in range(len(l1)):
 
-        # it adds the same element index from l1 and l2
+        # it adds the same element indexes from l1 and l2
         val = l1[i] + l2[i]
 
         # it appends the result into the temporary add array
@@ -140,10 +140,20 @@ def seqaddi(l1, l2):
 
 
 def seqmulti(l1, l2):
+
+    # initialises a temporary empty array
     mulList = []
+
+    #loops from 0 to length of l1
     for i in range(len(l1)):
+
+        # it multiplies the same element indexes from l1 and l2
         val = l1[i] + l2[i]
+
+        # it appends the result into the temporary add array
         mulList.append(val)
+
+    # returns the array
     return mulList
 
 
@@ -153,18 +163,42 @@ def seqmulti(l1, l2):
 
 
 def seqaddr(l1, l2):
+
+    # checks if the array length is bigger than 1
     if len(l1) > 0:
+
+        # it pops elements from l1 and l2
+        # adds it adds them
+        # inside a single element array
         temp =  [ l1.pop() + l2.pop() ]
+
+        # returns the function with the current arrays l1 and l2
+        # plus the temporary single element array
         return seqaddr(l1, l2) + temp
     else:
+
+        # if the length of l1 is less than 1
+        # then return empty array
         return []
 
 
 def seqmultr(l1, l2):
+
+    # checks if the array length is bigger than 1
     if len(l1) > 0:
+
+        # it pops elements from l1 and l2
+        # adds it multiplies them
+        # inside a single element array
         temp = [ l1.pop() * l2.pop() ]
+
+        # returns the function with the current arrays l1 and l2
+        # plus the temporary single element array
         return seqmultr(l1, l2) + temp
     else:
+
+        # if the length of l1 is less than 1
+        # then return empty array
         return []
 
 
@@ -173,11 +207,25 @@ def seqmultr(l1, l2):
 
 
 def seqaddlc(l1,l2):
-    return list(( x + y for x in l1 for y in l2 if l1.index(x) == l2.index(y)))
+
+    # creates a list comprehension that loops through two arrays
+    # it only does the operation when the indexes from the lists are the same
+    # the operation executed is to add two values
+    listComp = ( x + y for x in l1 for y in l2 if l1.index(x) == l2.index(y))
+
+    # it returns a list constructed using a list comprehension
+    return list(listComp)
 
 
 def seqmultlc(l1,l2):
-    return list(( x * y for x in l1 for y in l2 if l1.index(x) == l2.index(y) ))
+
+    # creates a list comprehension that loops through two arrays
+    # it only does the operation when the indexes from the lists are the same
+    # the operation executed is to add two values
+    listComp = ( x * y for x in l1 for y in l2 if l1.index(x) == l2.index(y) )
+
+    # it returns a list constructed using a list comprehension
+    return list(listComp)
 
 
 # END ANSWER TO Question 2
