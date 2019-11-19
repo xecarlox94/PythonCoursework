@@ -30,7 +30,7 @@ def test_q2c():
 
 
 def test_q3_ismatrix():
-	assert (not py_cw.ismatrix([[2,3,4], [3,2,6,7], [2,3,4]])) and py_cw.ismatrix([1,2,3], [3,4,6])
+	assert (not py_cw.ismatrix([[2,3,4], [3,2,6,7], [2,3,4]])) and py_cw.ismatrix([[1,2,3], [3,4,6]])
 
 
 def test_q3_matrixshape():
