@@ -1,0 +1,32 @@
+Coursework 2, Python, is 12% of your final mark. You can score a total of 36.
+
+The following is a rough marking scheme for Coursework 2, Python:
+
+Question 1: 4 marks
+    Question 1a: 2 marks
+    Question 1b: 2 marks
+
+Question 2: 6 marks
+    Question 2a: 2 marks
+    Question 2b: 2 marks
+    Question 2c: 2 marks
+
+Question 3: 8 marks
+    ismatrix: 1 mark
+    matrixshape: 1 mark
+    matrixadd: 2 marks
+    matrixmult: 4 marks
+
+Question 4: 5 marks
+
+Question 5: 3 marks
+
+Question 6: 4 marks
+    fenc: 2 marks
+    fdec: 2 marks
+
+Question 7: 3 marks
+
+Question 8: 3 marks
+
+Question 9: Unmarked - this was a teaser, which I hope you enjoyed thinking about. Solutions later.
