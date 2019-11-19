@@ -833,52 +833,63 @@ return the primes, starting from 2.
 
 
 def eratosthenes():
+
+    # initializes the primes array with the first prime number
     primes = [2]
+
+    # initializes the array of numbers
+    # equal to the power of the last prime number in the primes array
+    # plus one
     A = [True] * 5
 
+    # it creates a infinite loop
     while True:
+
+        # gets the index of the last index in the primes array
         lastIndexPrimes = len(primes) - 1
+
+        # returns a integer generator
+        # equal to the last element of the primes array
+        # containing all the current prime numbers
         yield primes[lastIndexPrimes]
 
+        # it loops through every single integer
+        # after the last primes array element, one by one
         for y in range(primes[lastIndexPrimes] + 1, len(A)):
+
+            # if the index in the array of numbers is true
+            # then this number is a prime number
             if A[y] == True:
+
+                # it appends the new prime number to the primes array
                 primes.append(y)
-                lastIndexPrimes = len(primes) - 1
-                newArrayLength = (primes[lastIndexPrimes] ** 2) + 1
-                tempArray = [True] * ( newArrayLength - len(A))
+
+                # calculates the new size of array
+                # equal to the power of the last prime number in the primes array
+                # plus one
+                arrayLength = (y ** 2) + 1
+
+                # the new array length is equal
+                # to the arrayLength minus the current A array length
+                newArrayLength = arrayLength - len(A)
+
+                # it initializes a complementary array containing only True value
+                tempArray = [True] * newArrayLength
+
+                # it adds the complementary array to the A array
                 A += tempArray
                 break
 
+        # for each prime in the primes array
         for prime in primes:
+
+            # loop through the from 2 (the first prime number)
+            # to the length of A plus 2
+            # iterating in the intervals of the value of the current prime number
             for i in range(primes[0], len(A) + 2, prime):
+
+                # it assigns the False the the respective array
                 A[i - 2] = False
-
-
-
-
-
-
-# This is not an endless generator (like you're asked to programme) this will only get primes upto the passed input or 40000
-def eratosthenesEXAMPLE(z=40000):
-    # create an array of true values the size of z
-    A = [True] * z
-    # iterate over each value to z squared
-    for x in range(2, int(z ** 0.5)):
-        # if A[x] has a true value
-        if A[x]:
-            # iterate over a range starting from x*2 ending at z in jumps of x
-            for z in range(x * 2, z, x):
-                # set anything in the range to false
-                A[z] = False
-    # iterate over the array
-    for y in range(2, len(A)):
-        # if a value is true that index is a prime number
-        if A[y]:
-            # yield the current iterator location as it is a prime
-            yield y
-
-
-
 
 
 
