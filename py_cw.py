@@ -37,31 +37,61 @@ versa. You may use the python methods real and imag without comment, but not com
 
 
 def cadd(c1, c2):
+
+    # decomposes c1
     (real1, img1) = c1
+
+    # decomposes c2
     (real2, img2) = c2
+
+    # it adds the real numbers from c1 and c2
     real = real1 + real2
+
+    # it adds the imaginary numbers from c1 and c2
     imag = img1 + img2
+
+    # it returns the sum tuple of c1 and c2
     return (real, imag)
 
 
 def cmult(c1,c2):
+
+    # decomposes c1
     (real1, img1) = c1
+
+    # decomposes c2
     (real2, img2) = c2
+
+    # it gets the product of the real final result
     real = (real1 * real2) - (img1 * img2)
+
+    # it gets the product of the imaginary final result
     img = (real1 * img2) + (real2 + img1)
+
+    # it returns a multiplication tuple of c1 by c2
     return (real, img)
 
 #####################################
 # Question 1b
 
 def tocomplex(x1, y1):
+
+    # it multiplies the y1 and multiplies it by "1j" to return a imaginary "0 + (y1) j"
     img = y1 * 1j
+
+    # returns tuple with a new complex number
     return (x1 + img)
 
 
 def fromcomplex(c):
+
+    # converts c real component into integer
     real = int(c.real)
+
+    # converts c imaginary component into integer
     img = int(c.imag)
+
+    # returns the tuple int by int
     return (real, img)
 
 
@@ -92,10 +122,20 @@ Call them seqaddr and seqmultr.
 
 
 def seqaddi(l1, l2):
+
+    # initialises a temporary empty array
     addList = []
+
+    #loops from 0 to length of l1
     for i in range(len(l1)):
+
+        # it adds the same element index from l1 and l2
         val = l1[i] + l2[i]
+
+        # it appends the result into the temporary add array
         addList.append(val)
+
+    # returns the array
     return addList
 
 
