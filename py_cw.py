@@ -257,40 +257,81 @@ should not appeal to any libraries, e.g. for matrix processing.  Don't use zip.
 
 
 def ismatrix(m):
+
+    # returns true
+    # if matrix is an empty list or a nested empty list
     if (m == [[]]) or (m == []): return True
 
+    # gets the first row length
     lengthRow = len(m[0])
+
+    # gets the collumn length
     length = len(m)
 
+    # loops from 1 to the collumn length
     for i in range(1, length - 1):
+
+        # if any of the rows have a different length from the first row
         if lengthRow != len(m[i + 1]):
+            # immediately stop function and return false
             return False
+
+        # it assigns the length of the row
         lengthRow = len(m[i])
 
+    # if loop did not return false
+    # then m is a matrix
     return True
 
 
 
 def matrixshape(m):
+
+    # get length first row
     lengthRow = len(m[0])
+
+    # get collumn length
     lengthCollumn = len(m)
+
+    # return tuple with row and collomn length
     return (lengthRow, lengthCollumn)
 
 
 
 def matrixadd(m1,m2):
+
+    # creates a new matrix array
     newMatrix = []
+
+    # it loops from 0 to the m1 collomn length
     for i in range(0, len(m1)):
+
+        # it adds the same indexes row to a new temporary list
         seq = seqaddlc(m1[i], m2[i])
+
+        # it appends new list into temporary matrix
         newMatrix.append(seq)
+
+    # returns the final matrix
     return newMatrix
 
 
+# returns the array sum of the result of multiplying two arrays
 def mul_sumLists(seq1, seq2):
+
+    # it multiplies two arrays, into a new temporary array
     list = seqmultlc(seq1, seq2)
+
+    # initialises the total with value of zero
     total = 0
+
+    # for each element in the array
     for el in list:
+
+        # accumulate the values into total
         total = total + el
+
+    # return final total
     return total
 
 def transposingMatrix(m):
