@@ -768,17 +768,41 @@ Do not use str.  You may find it useful to consider isinstance or the following 
 
 
 def gendat(datum):
+
+    # if data is equal to int
     if type(datum) == int:
+
+        # returns a single int array, containing the datum integer
         return [datum]
+
+    # if it is equal to empty list
     elif datum == []:
+
+        # return empty list
         return []
     else:
+
+        # while datum index zero is still a list
         while type(datum[0]) == list:
+
+            # if datum is a empty list
             if datum[0] == []:
+
+                # return the segment of list from the index one onwards
                 return gendat(datum[1:])
+
+            # assign the popped value from the zero index of datum to temp
             temp = datum[0].pop()
+
+            # if temp is different than empty list
             if temp != []:
+
+                # append the temporary non empty list element to datum
                 datum.append(temp)
+
+        # return the array result of
+        # the sum of the first element with
+        # the result of the gendat recursive call to the datum segment of list, from index 1 to last
         return datum[0:1] + gendat(datum[1:])
 
 
