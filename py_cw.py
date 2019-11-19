@@ -598,11 +598,50 @@ In contrast to many conventional programming languages, python has an operator t
 EXAMPLE:
 """
 
+print("\n\n")
+
+print("Assignment = vs equality == vs identity example: \n")
+
+print("Assigning set1 with set {4,3,5}")
+# assigning the set {4,3,5} to the variable set1:
+set1 = {4,3,5}
+
+
+print("Assigning setEqual with set {4,3,5}")
+# creating an equal set, by assigning the set {4,3,5}
+# different object, references a totally different object
+setEqual = {4,3,5}
+
+
+print("Assigning setRef with the set1 object reference")
+# setRef is referencing the same set1 address memory
+setRef = set1
+
+
+print("is set1 equal to setEqual?")
+print(set1 == setEqual)
+
+
+print("is set1 the same object as setEqual?")
+print(set1 is setEqual)
+
+
+print("is set1 equal to setRef?")
+print(set1 == setRef)
+
+print("is set1 the same object as setEqual?")
+print(set1 is setRef)
 
 
 
+print("So both set1 and setRef ids are exactly the same:")
+print(id(set1))
+print(id(setRef))
+print("Yes they are!!")
 
 
+
+print("\n\n")
 
 """
 
