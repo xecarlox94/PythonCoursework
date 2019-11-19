@@ -54,6 +54,10 @@ def cadd(c1, c2):
     return (real, imag)
 
 
+
+
+
+
 def cmult(c1,c2):
 
     # decomposes c1
@@ -71,6 +75,11 @@ def cmult(c1,c2):
     # it returns a multiplication tuple of c1 by c2
     return (real, img)
 
+
+
+
+
+
 #####################################
 # Question 1b
 
@@ -81,6 +90,10 @@ def tocomplex(x1, y1):
 
     # returns tuple with a new complex number
     return (x1 + img)
+
+
+
+
 
 
 def fromcomplex(c):
@@ -139,6 +152,10 @@ def seqaddi(l1, l2):
     return addList
 
 
+
+
+
+
 def seqmulti(l1, l2):
 
     # initialises a temporary empty array
@@ -155,6 +172,9 @@ def seqmulti(l1, l2):
 
     # returns the array
     return mulList
+
+
+
 
 
 
@@ -182,6 +202,10 @@ def seqaddr(l1, l2):
         return []
 
 
+
+
+
+
 def seqmultr(l1, l2):
 
     # checks if the array length is bigger than 1
@@ -202,6 +226,10 @@ def seqmultr(l1, l2):
         return []
 
 
+
+
+
+
 #####################################
 # Question 2c
 
@@ -217,6 +245,10 @@ def seqaddlc(l1,l2):
     return list(listComp)
 
 
+
+
+
+
 def seqmultlc(l1,l2):
 
     # creates a list comprehension that loops through two arrays
@@ -226,6 +258,10 @@ def seqmultlc(l1,l2):
 
     # it returns a list constructed using a list comprehension
     return list(listComp)
+
+
+
+
 
 
 # END ANSWER TO Question 2
@@ -285,6 +321,9 @@ def ismatrix(m):
 
 
 
+
+
+
 def matrixshape(m):
 
     # get length first row
@@ -295,6 +334,9 @@ def matrixshape(m):
 
     # return tuple with row and collomn length
     return (lengthRow, lengthCollumn)
+
+
+
 
 
 
@@ -316,6 +358,10 @@ def matrixadd(m1,m2):
     return newMatrix
 
 
+
+
+
+
 # returns the array sum of the result of multiplying two arrays
 def mul_sumLists(seq1, seq2):
 
@@ -334,6 +380,11 @@ def mul_sumLists(seq1, seq2):
     # return final total
     return total
 
+
+
+
+
+
 def transposingMatrix(m):
     transposedMatrix = []
     for i in range(0, len(m[0])):
@@ -343,11 +394,21 @@ def transposingMatrix(m):
         transposedMatrix.append(tempRow)
     return transposedMatrix
 
+
+
+
+
+
 def multSeqbyMatrix(seq, matrix):
     tempList = []
     for row in matrix:
         tempList.append(mul_sumLists(row, seq))
     return tempList
+
+
+
+
+
 
 def matrixmult(m1,m2):
     finalMatrix = []
@@ -359,7 +420,7 @@ def matrixmult(m1,m2):
 
 
 
-print(matrixmult([[1,2,3],[4,5,6]],[[7,8],[9,10],[11,12]]))
+
 
 
 # END ANSWER TO Question 3
@@ -399,6 +460,10 @@ The mutable types are objects that can have their inner value changed. this prop
 
 
 
+
+
+
+
 """
 
 Integer vs float types
@@ -407,6 +472,10 @@ Integers, in the python programming language, represent numbers the whole number
 However, the memory representation of a float value is completely different since it deals with fractional numbers with variable precision. For this reason, the memory architecture for this type of numbers takes more space than an integer value with constant precision. As a result, to switch between integers and floats it is necessary to use built-in constructors to cast the new number values into the computer memory.
 
 """
+
+
+
+
 
 
 
@@ -423,6 +492,10 @@ In contrast to many conventional programming languages, python has an operator t
 
 
 
+
+
+
+
 """
 
 
@@ -433,6 +506,10 @@ In contrast, the list constructor stores a sequence of polymorphic elements. It 
 In this example, the function range "5**5**5" will generate an integer stream from 0 to 298,023,223,876,953,125, incrementing successively by one, which means that it will generate a stream with 298,023,223,876,953,125 integers. This value is far too big for a regular computer processing power to perform. The result of this range function, the integer stream, is then stored into the memory using the list constructor which implies that a sequence of 298,023,223,876,953,125 integers will be stored in memory, what is also far too big for the regular computer's memory.
 
 """
+
+
+
+
 
 
 
@@ -473,12 +550,20 @@ So
 """
 
 
+
+
+
+
 def encdat(dat):
     dataType = type(dat)
     if dataType == int or dataType == float:
         return str(dat)
     elif dataType == complex:
         return str( int( dat.real ) ) + str("+") + str( int( dat.imag ) ) + str("j")
+
+
+
+
 
 
 # END ANSWER TO Question 5
@@ -498,11 +583,17 @@ integers and this representation. Call them fenc and fdec.
 """
 
 
+
+
+
+
 def fenc(i):
     if i == 0:
         return []
     else:
         return [ fenc( i - 1 ) , [ fenc( i - 1) ] ]
+
+
 
 
 
@@ -516,6 +607,10 @@ def fdec(l):
             counter += 1
             l = l[1].pop()
         return counter
+
+
+
+
 
 
 # END ANSWER TO Question 6
@@ -550,6 +645,10 @@ to next your generator behaves as if it were the infinite datastructure illustra
 """
 
 
+
+
+
+
 def cycleoflife():
     cycle = ["code", "eat", "sleep"]
     counter = 1
@@ -557,6 +656,10 @@ def cycleoflife():
         index = counter % len(cycle)
         yield cycle[index]
         counter += 1
+
+
+
+
 
 
 # END ANSWER TO Question 7
@@ -581,6 +684,10 @@ Do not use str.  You may find it useful to consider isinstance or the following 
 """
 
 
+
+
+
+
 def gendat(datum):
     if type(datum) == int:
         return [datum]
@@ -594,6 +701,10 @@ def gendat(datum):
             if temp != []:
                 datum.append(temp)
         return datum[0:1] + gendat(datum[1:])
+
+
+
+
 
 
 # END ANSWER TO Question 8
@@ -612,6 +723,11 @@ then repeated calls to
  next(x)
 return the primes, starting from 2.
 """
+
+
+
+
+
 
 def eratosthenes():
     primes = [2]
@@ -636,6 +752,9 @@ def eratosthenes():
 
 
 
+
+
+
 # This is not an endless generator (like you're asked to programme) this will only get primes upto the passed input or 40000
 def eratosthenesEXAMPLE(z=40000):
     # create an array of true values the size of z
@@ -654,6 +773,8 @@ def eratosthenesEXAMPLE(z=40000):
         if A[y]:
             # yield the current iterator location as it is a prime
             yield y
+
+
 
 
 
