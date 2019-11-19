@@ -459,7 +459,6 @@ def matrixmult(m1,m2):
     # return final matrix
     return finalMatrix
 
-print(matrixmult([[1,2,3],[4,5,6]],[[7,8],[9,10],[11,12]]))
 
 
 
@@ -597,10 +596,20 @@ So
 
 
 def encdat(dat):
+
+    # storing the data type
     dataType = type(dat)
+
+    # if the data type is int or float
     if dataType == int or dataType == float:
+
+        # convert it directly to string
         return str(dat)
+
+    # if the data type is complex
     elif dataType == complex:
+
+        # return a stripped string
         return str( int( dat.real ) ) + str("+") + str( int( dat.imag ) ) + str("j")
 
 
@@ -630,9 +639,12 @@ integers and this representation. Call them fenc and fdec.
 
 
 def fenc(i):
+
+    # if i is zero return empty list
     if i == 0:
         return []
     else:
+        # if not recursively create an array representation of lambda numbers
         return [ fenc( i - 1 ) , [ fenc( i - 1) ] ]
 
 
@@ -641,13 +653,25 @@ def fenc(i):
 
 
 def fdec(l):
+
+    # if l is equal to empty list, return zero
     if l == []:
         return 0
     else:
+
+        # initialise counter to 1
         counter = 1
-        while l != ([[], [[]]]):
+
+        # if l is different from lambda 1, then iterate through the loop
+        while l != fenc(1):
+
+            # increment the counter variable
             counter += 1
+
+            # list is equal to the pop result of the first l index
             l = l[1].pop()
+
+        # return counter
         return counter
 
 
@@ -692,11 +716,24 @@ to next your generator behaves as if it were the infinite datastructure illustra
 
 
 def cycleoflife():
+
+    # initializing the cycle of life array
     cycle = ["code", "eat", "sleep"]
+
+    # initializing the counter
     counter = 1
+
+    # creates an infinite loop
     while True:
+
+        # returns the current index, within the array range
         index = counter % len(cycle)
+
+        # returns a integer generator
+        # equal to the cycle array index of index
         yield cycle[index]
+
+        # it increments the counter
         counter += 1
 
 
