@@ -333,7 +333,7 @@ def matrixshape(m):
     lengthCollumn = len(m)
 
     # return tuple with row and collumn length
-    return (lengthRow, lengthCollumn)
+    return ( lengthCollumn, lengthRow)
 
 
 
