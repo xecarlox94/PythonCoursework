@@ -320,8 +320,6 @@ def ismatrix(m):
 
 
 
-print(ismatrix([[2,3,4], [3,2,6,7], [2,3,4]]))
-print(ismatrix([[2,3,4], [3,2,6], [2,3,4]]))
 
 
 
