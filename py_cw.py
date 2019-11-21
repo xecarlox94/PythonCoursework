@@ -165,7 +165,7 @@ def seqmulti(l1, l2):
     for i in range(len(l1)):
 
         # it multiplies the same element indexes from l1 and l2
-        val = l1[i] + l2[i]
+        val = l1[i] * l2[i]
 
         # it appends the result into the temporary add array
         mulList.append(val)
