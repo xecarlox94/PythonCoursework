@@ -709,18 +709,15 @@ def encdat(dat):
     # storing the data type
     dataType = type(dat)
 
-    # if the data type is int or float
-    if dataType == int or dataType == float:
-
-        # convert it directly to string
-        return str(dat)
-
     # if the data type is complex
-    elif dataType == complex:
+    if dataType == complex:
 
         # return a stripped string
-        return str( int( dat.real ) ) + str("+") + str( int( dat.imag ) ) + str("j")
+        return str( int( dat.real ) ) + str("+") + str( float( dat.imag ) ) + str("j")
 
+    else:
+        # convert it dat to string
+        return str(dat)
 
 
 
