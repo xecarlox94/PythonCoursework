@@ -298,22 +298,21 @@ def ismatrix(m):
     # if matrix is an empty list or a nested empty list
     if (m == [[]]) or (m == []): return True
 
-    # gets the first row length
-    lengthRow = len(m[0])
-
-    # gets the collumn length
-    length = len(m)
+    # current row length initialised
+    # assigned length of first row
+    rowLenth = len(m[0])
 
     # loops from 1 to the collumn length
-    for i in range(1, length - 1):
+    for i in range(1, len(m)):
 
-        # if any of the rows have a different length from the first row
-        if lengthRow != len(m[i + 1]):
-            # immediately stop function and return false
+        # compare previous row length
+        # against current row length
+        if rowLenth != len(m[i]):
+            # if different this is not an array
             return False
 
-        # it assigns the length of the row
-        lengthRow = len(m[i])
+        # assign current row length
+        rowLenth = len(m[i])
 
     # if loop did not return false
     # then m is a matrix
@@ -321,6 +320,8 @@ def ismatrix(m):
 
 
 
+print(ismatrix([[2,3,4], [3,2,6,7], [2,3,4]]))
+print(ismatrix([[2,3,4], [3,2,6], [2,3,4]]))
 
 
 
