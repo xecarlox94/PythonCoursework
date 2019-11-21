@@ -70,7 +70,7 @@ def cmult(c1,c2):
     real = (real1 * real2) - (img1 * img2)
 
     # it gets the product of the imaginary final result
-    img = (real1 * img2) + (real2 + img1)
+    img = (real1 * img2) + (real2 * img1)
 
     # it returns a multiplication tuple of c1 by c2
     return (real, img)
