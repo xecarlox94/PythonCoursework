@@ -709,6 +709,7 @@ def encdat(dat):
     # storing the data type
     dataType = type(dat)
 
+
     # if the data type is complex
     if dataType == complex:
 
